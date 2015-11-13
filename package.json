@@ -1,0 +1,47 @@
+{
+  "name": "swagger-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production npm run build && node server",
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack",
+    "develop": "NODE_ENV=development HOT=true node server",
+    "deploy": "webpack && git checkout -b build && git add static && git status && git commit -m 'Heroku build' && git checkout master && git push heroku build:master --force; git branch -D build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Evan Schneider",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "immutable": "^3.7.5",
+    "lodash": "^3.10.1",
+    "mousetrap": "^1.5.3",
+    "react": "^0.14.1",
+    "react-addons-css-transition-group": "^0.14.1",
+    "react-dom": "^0.14.1",
+    "react-redux": "^4.0.0",
+    "redux": "^3.0.4",
+    "redux-thunk": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.33",
+    "babel-loader": "^5.3.3",
+    "babel-plugin-react-transform": "^1.1.1",
+    "babel-runtime": "^5.8.29",
+    "css-loader": "^0.21.0",
+    "cssnext-loader": "^1.0.1",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.1",
+    "react": "^0.14.1",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.1.1",
+    "redux": "^3.0.4",
+    "redux-devtools": "^2.1.5",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-middleware": "^1.2.0",
+    "webpack-hot-middleware": "^2.4.1"
+  }
+}
